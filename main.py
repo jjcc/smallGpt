@@ -10,7 +10,6 @@ openai.api_key = API_KEY
 
 def generate_response(  mesages = [], model="gpt-3.5-turbo", temperature=0.7, max_tokens=150):
     
-    
     response = openai.ChatCompletion.create(
         model=model,
         messages = mesages
@@ -21,12 +20,9 @@ def generate_response(  mesages = [], model="gpt-3.5-turbo", temperature=0.7, ma
         #stop=None,
         #echo=False,
     )
-
-    message = response #.choices[0].text.strip()
-    return message
+    return response
 
 # Example usage:
-#input_text = "Tell me a joke."
 input_messages = [
   { "role": "system",    "content": "You are a Python developer." },
   { "role": "user",      "content": "How to use OpenAI API ?", },
